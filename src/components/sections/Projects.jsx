@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { projects } from '../../data/projects';
 import { FaStore, FaUserCircle } from 'react-icons/fa';
 
@@ -61,12 +60,12 @@ const Projects = () => {
                   </div>
                   
                   {project.isExternal ? (
-                    <Link
-                      to={project.link}
+                    <a
+                      href={project.link}
                       className="inline-flex items-center gap-1 text-dustyRose font-semibold hover:text-coral transition-colors"
                     >
                       {project.buttonText}
-                    </Link>
+                    </a>
                   ) : (
                     <button
                       onClick={handleScrollToTop}

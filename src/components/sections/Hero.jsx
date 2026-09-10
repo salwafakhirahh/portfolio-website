@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { FiArrowDown, FiShoppingBag } from 'react-icons/fi';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
+
+const TOKO_URL = 'http://localhost:5174';
 
 const Hero = () => {
   return (
@@ -86,13 +87,14 @@ const Hero = () => {
             transition={{ delay: 0.8 }}
             className="flex flex-wrap gap-4 justify-center md:justify-start"
           >
-            <Link
-              to="/toko"
+            {/* PAKAI <a> BUKAN <Link> */}
+            <a
+              href={`${TOKO_URL}/toko`}
               className="px-8 py-3 bg-dustyRose text-white rounded-full hover:bg-coral transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center gap-2"
             >
               <FiShoppingBag className="w-5 h-5" />
               Kunjungi Toko Rajut
-            </Link>
+            </a>
             <a
               href="#contact"
               className="px-8 py-3 bg-white/30 backdrop-blur-md text-gray-800 rounded-full hover:bg-white/50 transition-all duration-300 border border-white/40 shadow-lg hover:shadow-xl transform hover:-translate-y-1"

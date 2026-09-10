@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiMenu, FiX, FiShoppingBag, FiUser } from 'react-icons/fi';
 
+const TOKO_URL = 'http://localhost:5174';
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -50,21 +52,23 @@ const Navbar = () => {
               </a>
             ))}
             
-            <Link
-              to="/toko"
+            {/* Tombol ke Toko - PAKAI <a> */}
+            <a
+              href={`${TOKO_URL}/toko`}
               className="bg-dustyRose text-white px-5 py-2 rounded-full hover:bg-coral transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center gap-2"
             >
               <FiShoppingBag className="w-5 h-5" />
               Kunjungi Toko Rajut
-            </Link>
+            </a>
 
-            <Link
-              to="/admin"
+            {/* Tombol ke Admin - PAKAI <a> */}
+            <a
+              href={`${TOKO_URL}/toko/admin`}
               className="bg-white/40 backdrop-blur-md text-gray-700 px-5 py-2 rounded-full hover:bg-white/60 transition-all duration-300 border border-white/40 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center gap-2"
             >
               <FiUser className="w-5 h-5" />
               Admin
-            </Link>
+            </a>
           </div>
 
           <button
@@ -92,22 +96,22 @@ const Navbar = () => {
               {item.name}
             </a>
           ))}
-          <Link
-            to="/toko"
+          <a
+            href={`${TOKO_URL}/toko`}
             className="flex items-center gap-2 bg-dustyRose text-white px-4 py-2 rounded-full hover:bg-coral transition-all justify-center"
             onClick={() => setIsOpen(false)}
           >
             <FiShoppingBag className="w-5 h-5" />
             Kunjungi Toko Rajut
-          </Link>
-          <Link
-            to="/admin"
+          </a>
+          <a
+            href={`${TOKO_URL}/toko/admin`}
             className="flex items-center gap-2 bg-white/60 backdrop-blur-md text-gray-700 px-4 py-2 rounded-full hover:bg-white/80 transition-all border border-white/40 justify-center"
             onClick={() => setIsOpen(false)}
           >
             <FiUser className="w-5 h-5" />
             Admin
-          </Link>
+          </a>
         </div>
       </motion.div>
     </motion.nav>
