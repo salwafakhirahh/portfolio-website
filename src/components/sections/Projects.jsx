@@ -1,11 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import {
+  FaUserCircle, FaStore, FaHospital, FaIdCard, FaArrowUp, FaArrowRight
+} from 'react-icons/fa';
 import { projects } from '../../data/projects';
-import { FaStore, FaUserCircle } from 'react-icons/fa';
 
 const iconMap = {
-  FaStore: FaStore,
-  FaUserCircle: FaUserCircle
+  FaUserCircle, FaStore, FaHospital, FaIdCard,
 };
 
 const Projects = () => {
@@ -31,7 +32,7 @@ const Projects = () => {
           <div className="w-24 h-1 bg-dustyRose mx-auto rounded-full"></div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {projects.map((project, index) => {
             const IconComponent = iconMap[project.icon];
             return (
@@ -41,12 +42,15 @@ const Projects = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="glass rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300 cursor-pointer group"
+                className="glass rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300 group"
               >
-                <div className="h-48 bg-gradient-to-r from-dustyRose to-coral flex items-center justify-center">
+                <div className="h-48 bg-gradient-to-r from-dustyRose to-coral flex items-center justify-center relative">
                   {IconComponent && (
-                    <IconComponent className="text-7xl text-white/80" />
+                    <IconComponent className="text-7xl text-white/90" />
                   )}
+                  <span className="absolute top-4 right-4 px-3 py-1 bg-white/30 backdrop-blur-md rounded-full text-xs font-semibold text-white">
+                    {project.category}
+                  </span>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-2">{project.title}</h3>
@@ -58,21 +62,28 @@ const Projects = () => {
                       </span>
                     ))}
                   </div>
-                  
+
                   {project.isExternal ? (
                     <a
                       href={project.link}
-                      className="inline-flex items-center gap-1 text-dustyRose font-semibold hover:text-coral transition-colors"
+                      className="inline-flex items-center gap-2 text-dustyRose font-semibold hover:text-coral transition-colors"
                     >
-                      {project.buttonText}
+                      {project.buttonText} <FaArrowRight className="w-3 h-3" />
                     </a>
-                  ) : (
+                  ) : project.link === '/' ? (
                     <button
                       onClick={handleScrollToTop}
-                      className="inline-flex items-center gap-1 text-dustyRose font-semibold hover:text-coral transition-colors cursor-pointer bg-transparent border-none p-0"
+                      className="inline-flex items-center gap-2 text-dustyRose font-semibold hover:text-coral transition-colors bg-transparent border-none p-0 cursor-pointer"
                     >
-                      {project.buttonText}
+                      {project.buttonText} <FaArrowUp className="w-3 h-3" />
                     </button>
+                  ) : (
+                    <a
+                      href={project.link}
+                      className="inline-flex items-center gap-2 text-dustyRose font-semibold hover:text-coral transition-colors"
+                    >
+                      {project.buttonText} <FaArrowRight className="w-3 h-3" />
+                    </a>
                   )}
                 </div>
               </motion.div>

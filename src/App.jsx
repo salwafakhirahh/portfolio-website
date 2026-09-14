@@ -4,6 +4,8 @@ import { Toaster } from 'react-hot-toast';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Hero from './components/sections/Hero';
+import Professional from './components/sections/Professional';
+import Education from './components/sections/Education';
 import About from './components/sections/About';
 import Skills from './components/sections/Skills';
 import Experience from './components/sections/Experience';
@@ -20,6 +22,8 @@ function App() {
           <Route path="/" element={
             <>
               <Hero />
+              <Professional />
+              <Education />
               <About />
               <Skills />
               <Experience />

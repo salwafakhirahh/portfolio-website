@@ -1,24 +1,48 @@
-const TOKO_URL = 'http://localhost:5174';
+const TOKO_URL = import.meta.env.VITE_TOKO_URL || 'http://localhost:5174';
 
 export const projects = [
   {
     id: 1,
-    title: 'Toko Rajut Online',
-    description: 'E-commerce untuk produk rajut dengan fitur keranjang, checkout, dan admin panel menggunakan React, Tailwind CSS, dan Supabase.',
+    title: 'Website Portfolio Pribadi',
+    description: 'Website profil pribadi dengan desain glassmorphism dan animasi interaktif menggunakan React, Tailwind CSS, dan Framer Motion.',
+    tech: ['React', 'Tailwind', 'Framer Motion'],
+    link: '/',
+    isExternal: false,
+    icon: 'FaUserCircle',
+    buttonText: 'Scroll ke Atas',
+    category: 'Website',
+  },
+  {
+    id: 2,
+    title: 'Web Toko Rajut Urban Knitters',
+    description: 'Toko online produk rajut dengan fitur keranjang, checkout, admin panel, dan database Supabase.',
     tech: ['React', 'Tailwind', 'Supabase'],
     link: `${TOKO_URL}/toko`,
     isExternal: true,
     icon: 'FaStore',
-    buttonText: 'Lihat Toko →'
+    buttonText: 'Lihat Toko',
+    category: 'Website',
   },
   {
-    id: 2,
-    title: 'Portfolio Pribadi',
-    description: 'Website profil dengan desain glassmorphism dan animasi interaktif menggunakan React, Tailwind CSS, dan Framer Motion.',
-    tech: ['React', 'Tailwind', 'Framer Motion'],
-    link: '#home',
+    id: 3,
+    title: 'Website Rumah Sehat',
+    description: 'Website informasi layanan kesehatan Rumah Sehat. Dibuat saat magang di RSU Aisyiyah Ponorogo.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    link: '#',
     isExternal: false,
-    icon: 'FaUserCircle',
-    buttonText: 'Scroll ke Atas ↑'
-  }
+    icon: 'FaHospital',
+    buttonText: 'Detail Project',
+    category: 'Website',
+  },
+  {
+    id: 4,
+    title: 'Website Form E-KTP',
+    description: 'Website untuk pengisian formulir E-KTP secara digital. Dibuat untuk mempermudah proses pendataan penduduk.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    link: '#',
+    isExternal: false,
+    icon: 'FaIdCard',
+    buttonText: 'Detail Project',
+    category: 'Aplikasi',
+  },
 ];
