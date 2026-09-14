@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiMenu, FiX, FiShoppingBag, FiUser } from 'react-icons/fi';
 
-const TOKO_URL = 'http://localhost:5174';
+const TOKO_URL = import.meta.env.VITE_TOKO_URL || 'http://localhost:5174';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

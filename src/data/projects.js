@@ -43,6 +43,6 @@ export const projects = [
     isExternal: false,
     icon: 'FaIdCard',
     buttonText: 'Detail Project',
-    category: 'Aplikasi',
+    category: 'Website',
   },
 ];
