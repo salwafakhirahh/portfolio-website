@@ -16,14 +16,14 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '/' },
+    { name: 'Beranda', href: '/' },
     { name: 'Profil', href: '/#professional' },
     { name: 'Pendidikan', href: '/#education' },
-    { name: 'About', href: '/#about' },
-    { name: 'Skills', href: '/#skills' },
-    { name: 'Journey', href: '/#experience' },
-    { name: 'Projects', href: '/#projects' },
-    { name: 'Contact', href: '/#contact' },
+    { name: 'Tentang', href: '/#about' },
+    { name: 'Keahlian', href: '/#skills' },
+    { name: 'Pengalaman', href: '/#experience' },
+    { name: 'Proyek', href: '/#projects' },
+    { name: 'Kontak', href: '/#contact' },
   ];
 
   return (
@@ -38,7 +38,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <motion.div whileHover={{ scale: 1.05 }} className="flex-shrink-0">
             <Link to="/" className="text-2xl font-bold text-dustyRose">
-              MyPortfolio
+              Portfolio
             </Link>
           </motion.div>
 

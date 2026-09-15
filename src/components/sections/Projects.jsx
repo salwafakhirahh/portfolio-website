@@ -26,8 +26,8 @@ const Projects = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-gray-800">My</span>
-            <span className="text-dustyRose"> Projects</span>
+            <span className="text-gray-800">Proyek</span>
+            <span className="text-dustyRose"> Saya</span>
           </h2>
           <div className="w-24 h-1 bg-dustyRose mx-auto rounded-full"></div>
         </motion.div>

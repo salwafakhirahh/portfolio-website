@@ -74,8 +74,8 @@ const Contact = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-gray-800">Contact</span>
-            <span className="text-dustyRose"> Me</span>
+            <span className="text-gray-800">Hubungi</span>
+            <span className="text-dustyRose"> Saya</span>
           </h2>
           <div className="w-24 h-1 bg-dustyRose mx-auto rounded-full"></div>
         </motion.div>
@@ -89,7 +89,7 @@ const Contact = () => {
             className="space-y-6"
           >
             <div className="glass rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">Get In Touch</h3>
+              <h3 className="text-2xl font-bold text-gray-800 mb-6">Hubungi Saya</h3>
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-dustyRose/20 rounded-full flex items-center justify-center">
@@ -106,7 +106,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600">Phone</p>
-                    <p className="font-semibold text-gray-800">+62 812 3456 7890</p>
+                    <p className="font-semibold text-gray-800">+62 822 4563 8337</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">

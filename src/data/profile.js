@@ -1,8 +1,8 @@
 export const profile = {
   fullName: 'Salwa Fakhirah Harsya',
-  field: 'Web Developer',
+  field: 'Junior Web Developer',
   vision: 'Kunci keberhasilan adalah konsistensi dan disiplin',
-  motto: 'Loop like a dream',
+  motto: 'Jadilah versi terbaik dari diri sendiri',
   position: 'Junior Web Developer',
   institution: 'SMKN 1 Jenangan',
   expertise: 'Web Development',

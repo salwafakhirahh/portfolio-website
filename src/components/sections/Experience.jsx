@@ -3,13 +3,15 @@ import { motion } from 'framer-motion';
 import { FiBookOpen, FiBriefcase, FiUsers, FiTool } from 'react-icons/fi';
 import {
   FaBookOpen, FaGraduationCap, FaBriefcase, FaUsers, FaLeaf,
-  FaIdCard, FaHospital, FaUserCircle, FaStore
+  FaIdCard, FaHospital, FaUserCircle, FaStore, FaIndustry,
+  FaTrophy, FaChalkboardTeacher
 } from 'react-icons/fa';
 import { experiences } from '../../data/experiences';
 
 const iconMap = {
   FaBookOpen, FaGraduationCap, FaBriefcase, FaUsers, FaLeaf,
-  FaIdCard, FaHospital, FaUserCircle, FaStore,
+  FaIdCard, FaHospital, FaUserCircle, FaStore, FaIndustry,
+  FaTrophy, FaChalkboardTeacher,
 };
 
 const categories = [
@@ -33,12 +35,12 @@ const Experience = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-gray-800">My</span>
-            <span className="text-dustyRose"> Journey</span>
+          <h2 className="text-4xl md:text-5xl font-times mb-4">
+            <span className="text-gray-800">Pengalaman</span>
+            <span className="text-dustyRose"> Saya</span>
           </h2>
           <div className="w-24 h-1 bg-dustyRose mx-auto rounded-full"></div>
-          <p className="text-gray-600 mt-4">Pengalaman belajar, magang, organisasi, dan proyek</p>
+          <p className="text-gray-600 mt-4 font-inter">Pengalaman belajar, magang, organisasi, dan proyek</p>
         </motion.div>
 
         <div className="flex flex-wrap gap-2 justify-center mb-8">

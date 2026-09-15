@@ -14,8 +14,8 @@ const About = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-gray-800">About</span>
-            <span className="text-dustyRose"> Me</span>
+            <span className="text-gray-800">Tentang</span>
+            <span className="text-dustyRose"> Saya</span>
           </h2>
           <div className="w-24 h-1 bg-dustyRose mx-auto rounded-full"></div>
         </motion.div>
@@ -29,27 +29,27 @@ const About = () => {
             className="space-y-6"
           >
             <div className="glass rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Who I Am</h3>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Tentang Saya</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Saya adalah seorang Web Developer dengan semangat tinggi untuk belajar 
-                dan mengembangkan aplikasi web modern. Saya senang menciptakan antarmuka 
-                yang indah dengan animasi halus dan pengalaman pengguna yang luar biasa.
+                Saya Salwa Fakhirah Harsya siswi SMKN 1 Jenangan yang memiliki dedikasi tinggi dalam mempelajari
+                serta mengembangkan aplikasi web modern. Saya memiliki minat besar dalam menciptakan antarmka yang estetis, responsif, 
+                dan mampu memberikan pengalaman pengguna yang berkualitas.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                Perjalanan saya di dunia web development dimulai dari rasa penasaran 
-                tentang bagaimana website bekerja, dan berkembang menjadi karir yang 
-                fokus pada penciptaan pengalaman digital yang bermakna.
+                Perjalanan karier saya di bidang web development bermula dari rasa keingintahuan
+                terhadap mekanisme kerja sebuah situs web. Rasa keingintahuan tersebut kemudian berkembang 
+                menjadi sebuah karier profesional yang berfokus pada penciptaan pengalaman digital yang bermakna dan bermanfaat.
               </p>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div className="glass rounded-xl p-4 text-center">
                 <div className="text-3xl font-bold text-dustyRose">2+</div>
-                <div className="text-sm text-gray-600">Years Experience</div>
+                <div className="text-sm text-gray-600">Tahun Pengalaman</div>
               </div>
               <div className="glass rounded-xl p-4 text-center">
-                <div className="text-3xl font-bold text-dustyRose">5+</div>
-                <div className="text-sm text-gray-600">Projects</div>
+                <div className="text-3xl font-bold text-dustyRose">4+</div>
+                <div className="text-sm text-gray-600">Proyek Selesai</div>
               </div>
             </div>
           </motion.div>
@@ -61,25 +61,25 @@ const About = () => {
             viewport={{ once: true }}
             className="glass rounded-2xl p-8"
           >
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">Quick Info</h3>
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">Informasi Singkat</h3>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-dustyRose/20 flex items-center justify-center">
                   <FiUser className="w-5 h-5 text-dustyRose" />
                 </div>
-                <span className="text-gray-700">Name: Salwa Fakhirah Harsya</span>
+                <span className="text-gray-700">Nama: Salwa Fakhirah Harsya</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-dustyRose/20 flex items-center justify-center">
                   <FiBookOpen className="w-5 h-5 text-dustyRose" />
                 </div>
-                <span className="text-gray-700">Education: Senior High School</span>
+                <span className="text-gray-700">Pendidikan: Sekolah Menengah Kejuruan</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-dustyRose/20 flex items-center justify-center">
                   <FiMapPin className="w-5 h-5 text-dustyRose" />
                 </div>
-                <span className="text-gray-700">Location: Indonesia</span>
+                <span className="text-gray-700">Lokasi: Indonesia</span>
               </div>
             </div>
           </motion.div>

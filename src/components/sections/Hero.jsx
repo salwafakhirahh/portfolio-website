@@ -54,7 +54,7 @@ const Hero = () => {
           </motion.div>
 
           <h1 className="text-5xl md:text-6xl mb-4 font-times">
-            <span className="text-gray-800">Hi, I'm</span>
+            <span className="text-gray-800">Hai, Saya</span>
             <br />
             <motion.span
               initial={{ opacity: 0, scale: 0.5 }}
@@ -128,7 +128,7 @@ const Hero = () => {
               href="#contact"
               className="px-8 py-3 bg-white/30 backdrop-blur-md text-gray-800 rounded-full hover:bg-white/50 transition-all duration-300 border border-white/40 shadow-lg hover:shadow-xl transform hover:-translate-y-1 btn-text"
             >
-              Contact Me
+              Hubungi Saya
             </a>
           </motion.div>
         </motion.div>
