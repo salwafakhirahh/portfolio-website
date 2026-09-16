@@ -10,14 +10,32 @@ const TOKO_URL = import.meta.env.VITE_TOKO_URL || 'http://localhost:5174';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+
+      // Deteksi section aktif saat scroll
+      const sections = navItems.map(item => item.href.replace('#', ''));
+      let current = 'home';
+      
+      sections.forEach(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom > 100) {
+            current = section;
+          }
+        }
+      });
+      setActiveSection(current);
+    };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Menu disesuaikan dengan urutan section baru
   const navItems = [
     { name: 'Beranda', href: '#home' },
     { name: 'Tentang', href: '#about' },
@@ -31,6 +49,33 @@ const Navbar = () => {
     { name: 'Artikel', href: '#articles' },
     { name: 'Kontak', href: '#contact' },
   ];
+
+  // Fungsi scroll ke section dengan animasi
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
+    
+    if (element) {
+      // Scroll smooth ke section
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      
+      // Update URL hash tanpa reload
+      window.history.pushState(null, '', href);
+      
+      // Trigger ulang animasi Framer Motion
+      // dengan force re-render
+      setTimeout(() => {
+        window.dispatchEvent(new Event('scroll'));
+      }, 500);
+    } else {
+      // Kalau target tidak ada, scroll ke atas (beranda)
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.history.pushState(null, '', '#home');
+    }
+    
+    setIsOpen(false);
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -68,6 +113,8 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
+
+          {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -76,38 +123,52 @@ const Navbar = () => {
             whileTap={{ scale: 0.95 }}
             className="flex-shrink-0"
           >
-            <Link to="/" className="text-xl lg:text-2xl font-bold text-dustyRose font-times">
+            <a
+              href="#home"
+              onClick={(e) => handleNavClick(e, '#home')}
+              className="text-xl lg:text-2xl font-bold text-dustyRose font-times cursor-pointer"
+            >
               Portfolio
-            </Link>
+            </a>
           </motion.div>
 
+          {/* Menu Desktop */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
             className="hidden lg:flex items-center space-x-1 xl:space-x-2"
           >
-            {navItems.map((item) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                variants={itemVariants}
-                whileHover={{ scale: 1.08, color: '#FBAF46', transition: { duration: 0.2 } }}
-                whileTap={{ scale: 0.95 }}
-                className="px-2 xl:px-3 py-2 text-sm font-medium text-gray-700 transition-colors nav-item whitespace-nowrap relative group"
-              >
-                {item.name}
-                <motion.span
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-dustyRose rounded-full"
-                  initial={{ scaleX: 0 }}
-                  whileHover={{ scaleX: 1 }}
-                  transition={{ duration: 0.3 }}
-                  style={{ transformOrigin: 'center' }}
-                />
-              </motion.a>
-            ))}
+            {navItems.map((item) => {
+              const isActive = activeSection === item.href.replace('#', '');
+              return (
+                <motion.a
+                  key={item.name}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.08, transition: { duration: 0.2 } }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`px-2 xl:px-3 py-2 text-sm font-medium transition-colors nav-item whitespace-nowrap relative group cursor-pointer ${
+                    isActive ? 'text-dustyRose' : 'text-gray-700 hover:text-dustyRose'
+                  }`}
+                >
+                  {item.name}
+                  {/* Underline animasi saat hover atau aktif */}
+                  <motion.span
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-dustyRose rounded-full"
+                    initial={{ scaleX: isActive ? 1 : 0 }}
+                    animate={{ scaleX: isActive ? 1 : 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.3 }}
+                    style={{ transformOrigin: 'center' }}
+                  />
+                </motion.a>
+              );
+            })}
           </motion.div>
 
+          {/* Tombol Aksi Desktop */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -150,6 +211,7 @@ const Navbar = () => {
             </motion.div>
           </motion.div>
 
+          {/* Tombol Mobile Menu */}
           <motion.button
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -187,6 +249,7 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Menu Mobile */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -201,13 +264,13 @@ const Navbar = () => {
                 <motion.a
                   key={item.name}
                   href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05, duration: 0.3 }}
                   whileHover={{ x: 8, color: '#FBAF46' }}
                   whileTap={{ scale: 0.98 }}
-                  className="block px-4 py-2 text-gray-700 hover:bg-dustyRose/10 rounded-lg transition-colors nav-item"
-                  onClick={() => setIsOpen(false)}
+                  className="block px-4 py-2 text-gray-700 hover:bg-dustyRose/10 rounded-lg transition-colors nav-item cursor-pointer"
                 >
                   {item.name}
                 </motion.a>
