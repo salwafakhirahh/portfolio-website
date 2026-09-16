@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiCalendar, FiClock, FiArrowRight } from 'react-icons/fi';
 import { articles } from '../../data/articles';
@@ -101,13 +102,14 @@ const Articles = () => {
                   </span>
                 </div>
 
-                <a
-                  href={article.link}
+                {/* Tombol Baca Selengkapnya — pakai Link */}
+                <Link
+                  to={`/artikel/${article.slug}`}
                   className="inline-flex items-center gap-2 text-dustyRose font-semibold text-sm hover:text-coral transition-colors btn-text"
                 >
                   Baca Selengkapnya
                   <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </div>
             </motion.article>
           ))}

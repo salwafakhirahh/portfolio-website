@@ -19,7 +19,50 @@ import Activities from './components/sections/Activities';
 import Articles from './components/sections/Articles';
 import Contact from './components/sections/Contact';
 
+// Pages
+import ArticleDetailPage from './pages/ArticleDetailPage';
+
 import './index.css';
+
+// ===== Halaman Utama (semua section) =====
+function HomePage() {
+  return (
+    <>
+      {/* 1. Hero/Beranda */}
+      <Hero />
+
+      {/* 2. Tentang Saya */}
+      <About />
+
+      {/* 3. Profil Profesional */}
+      <Professional />
+
+      {/* 4. Pendidikan */}
+      <Education />
+
+      {/* 5. Pengalaman */}
+      <Experience />
+
+      {/* 6. Keahlian */}
+      <Skills />
+
+      {/* 7. Karya/Portfolio */}
+      <Projects />
+
+      {/* 8. Sertifikat/Prestasi */}
+      <Certificates />
+
+      {/* 9. Kegiatan */}
+      <Activities />
+
+      {/* 10. Artikel/Blog */}
+      <Articles />
+
+      {/* 11. Kontak */}
+      <Contact />
+    </>
+  );
+}
 
 function App() {
   return (
@@ -27,45 +70,11 @@ function App() {
       <div className="min-h-screen bg-gradient-to-br from-cream via-roseQuartz to-dustyRose">
         <Navbar />
         <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                {/* 1. Hero/Beranda */}
-                <Hero />
+          {/* Halaman Utama */}
+          <Route path="/" element={<HomePage />} />
 
-                {/* 2. Tentang Saya */}
-                <About />
-
-                {/* 3. Profil Profesional */}
-                <Professional />
-
-                {/* 4. Pendidikan */}
-                <Education />
-
-                {/* 5. Pengalaman */}
-                <Experience />
-
-                {/* 6. Keahlian */}
-                <Skills />
-
-                {/* 7. Karya/Portfolio */}
-                <Projects />
-
-                {/* 8. Sertifikat/Prestasi */}
-                <Certificates />
-
-                {/* 9. Kegiatan */}
-                <Activities />
-
-                {/* 10. Artikel/Blog */}
-                <Articles />
-
-                {/* 11. Kontak */}
-                <Contact />
-              </>
-            }
-          />
+          {/* Halaman Detail Artikel */}
+          <Route path="/artikel/:slug" element={<ArticleDetailPage />} />
         </Routes>
         <Footer />
         <Toaster position="top-center" />
