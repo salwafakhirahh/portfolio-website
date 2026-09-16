@@ -17,53 +17,41 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Menu disesuaikan dengan urutan section baru
   const navItems = [
     { name: 'Beranda', href: '#home' },
+    { name: 'Tentang', href: '#about' },
     { name: 'Profil', href: '#professional' },
     { name: 'Pendidikan', href: '#education' },
-    { name: 'Keahlian', href: '#skills' },
     { name: 'Pengalaman', href: '#experience' },
-    { name: 'Sertifikat', href: '#certificates' },
+    { name: 'Keahlian', href: '#skills' },
     { name: 'Karya', href: '#projects' },
+    { name: 'Sertifikat', href: '#certificates' },
     { name: 'Kegiatan', href: '#activities' },
+    { name: 'Artikel', href: '#articles' },
     { name: 'Kontak', href: '#contact' },
   ];
 
-  // Animasi container menu desktop
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.05,
-        delayChildren: 0.2,
-      },
+      transition: { staggerChildren: 0.05, delayChildren: 0.2 },
     },
   };
 
-  // Animasi per item menu
   const itemVariants = {
     hidden: { opacity: 0, y: -10 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.3 },
-    },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
   };
 
-  // Animasi tombol
   const buttonVariants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
-      opacity: 1,
-      scale: 1,
+      opacity: 1, scale: 1,
       transition: { duration: 0.4, type: 'spring', stiffness: 200 },
     },
-    hover: {
-      scale: 1.05,
-      y: -2,
-      transition: { duration: 0.2 },
-    },
+    hover: { scale: 1.05, y: -2, transition: { duration: 0.2 } },
     tap: { scale: 0.95 },
   };
 
@@ -80,8 +68,6 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-
-          {/* Logo dengan animasi hover */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -95,7 +81,6 @@ const Navbar = () => {
             </Link>
           </motion.div>
 
-          {/* Menu Desktop dengan stagger animation */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -107,16 +92,11 @@ const Navbar = () => {
                 key={item.name}
                 href={item.href}
                 variants={itemVariants}
-                whileHover={{
-                  scale: 1.08,
-                  color: '#FBAF46',
-                  transition: { duration: 0.2 },
-                }}
+                whileHover={{ scale: 1.08, color: '#FBAF46', transition: { duration: 0.2 } }}
                 whileTap={{ scale: 0.95 }}
                 className="px-2 xl:px-3 py-2 text-sm font-medium text-gray-700 transition-colors nav-item whitespace-nowrap relative group"
               >
                 {item.name}
-                {/* Underline animasi saat hover */}
                 <motion.span
                   className="absolute bottom-0 left-0 right-0 h-0.5 bg-dustyRose rounded-full"
                   initial={{ scaleX: 0 }}
@@ -128,7 +108,6 @@ const Navbar = () => {
             ))}
           </motion.div>
 
-          {/* Tombol Aksi Desktop dengan animasi */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -171,7 +150,6 @@ const Navbar = () => {
             </motion.div>
           </motion.div>
 
-          {/* Tombol Mobile Menu dengan animasi */}
           <motion.button
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -209,7 +187,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Menu Mobile dengan animasi slide & stagger */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -258,10 +235,7 @@ const Navbar = () => {
                   Kunjungi Toko Rajut
                 </motion.a>
 
-                <motion.div
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                >
+                <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
                   <Link
                     to="/admin"
                     className="flex items-center justify-center gap-2 bg-white/60 backdrop-blur-md text-gray-700 px-4 py-2 rounded-full hover:bg-white/80 transition-colors border border-white/40 btn-text"
