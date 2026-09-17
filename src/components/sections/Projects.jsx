@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   FaUserCircle, FaStore, FaHospital, FaIdCard, FaArrowUp, FaArrowRight
@@ -35,6 +36,8 @@ const Projects = () => {
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {projects.map((project, index) => {
             const IconComponent = iconMap[project.icon];
+            const hasDetail = project.slug && project.detail;
+
             return (
               <motion.div
                 key={project.id}
@@ -63,9 +66,11 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  {project.isExternal ? (
+                  {project.isExternal && project.link && project.link !== '#' ? (
                     <a
                       href={project.link}
+                      target="_blank"
+                      rel="noreferrer"
                       className="inline-flex items-center gap-2 text-dustyRose font-semibold hover:text-coral transition-colors"
                     >
                       {project.buttonText} <FaArrowRight className="w-3 h-3" />
@@ -77,13 +82,17 @@ const Projects = () => {
                     >
                       {project.buttonText} <FaArrowUp className="w-3 h-3" />
                     </button>
-                  ) : (
-                    <a
-                      href={project.link}
+                  ) : hasDetail ? (
+                    <Link
+                      to={`/proyek/${project.slug}`}
                       className="inline-flex items-center gap-2 text-dustyRose font-semibold hover:text-coral transition-colors"
                     >
                       {project.buttonText} <FaArrowRight className="w-3 h-3" />
-                    </a>
+                    </Link>
+                  ) : (
+                    <span className="inline-flex items-center gap-2 text-gray-400 text-sm">
+                      Detail belum tersedia
+                    </span>
                   )}
                 </div>
               </motion.div>

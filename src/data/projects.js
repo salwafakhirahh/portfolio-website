@@ -3,6 +3,7 @@ const TOKO_URL = import.meta.env.VITE_TOKO_URL || 'http://localhost:5174';
 export const projects = [
   {
     id: 1,
+    slug: 'website-portfolio-pribadi',
     title: 'Website Portfolio Pribadi',
     description: 'Website profil pribadi dengan desain glassmorphism dan animasi interaktif menggunakan React, Tailwind CSS, dan Framer Motion.',
     tech: ['React', 'Tailwind', 'Framer Motion'],
@@ -11,9 +12,29 @@ export const projects = [
     icon: 'FaUserCircle',
     buttonText: 'Scroll ke Atas',
     category: 'Website',
+    detail: {
+      background: 'Website portfolio ini dibuat sebagai wadah untuk menampilkan profil, keahlian, pengalaman, dan karya saya sebagai pengembang web. Tujuannya agar siapa pun yang ingin mengenal saya lebih jauh dapat melihat rekam jejak dan hasil kerja saya secara ringkas dan terstruktur.',
+      features: [
+        'Desain glassmorphism dengan efek blur dan transparan yang modern.',
+        'Animasi interaktif pada setiap section menggunakan Framer Motion.',
+        'Navigasi smooth scroll antar section tanpa reload halaman.',
+        'Bagian artikel yang bisa dibuka ke halaman detail tersendiri.',
+        'Responsif di berbagai ukuran layar, mulai ponsel hingga desktop.',
+      ],
+      technologies: [
+        { name: 'React', desc: 'Library utama untuk membangun antarmuka berbasis komponen.' },
+        { name: 'Tailwind CSS', desc: 'Framework CSS untuk styling cepat dan konsisten.' },
+        { name: 'Framer Motion', desc: 'Library animasi untuk transisi dan efek interaktif.' },
+        { name: 'React Router', desc: 'Routing antar halaman di sisi klien.' },
+      ],
+      role: 'Desainer dan pengembang tunggal.',
+      duration: '2025',
+      images: [],
+    },
   },
   {
     id: 2,
+    slug: 'web-toko-rajut-urban-knitters',
     title: 'Web Toko Rajut Urban Knitters',
     description: 'Toko online produk rajut dengan fitur keranjang, checkout, admin panel, dan database Supabase.',
     tech: ['React', 'Tailwind', 'Supabase'],
@@ -22,9 +43,31 @@ export const projects = [
     icon: 'FaStore',
     buttonText: 'Lihat Toko',
     category: 'Website',
+    detail: {
+      background: 'Urban Knitters adalah toko rajutan handmade yang membutuhkan platform online untuk memasarkan produk dan menerima pesanan langsung dari pelanggan. Website ini dibangun untuk memenuhi kebutuhan tersebut, mulai dari katalog produk hingga manajemen pesanan di sisi admin.',
+      features: [
+        'Katalog produk dengan filter kategori dan pencarian.',
+        'Detail produk dengan ulasan dan rating dari pelanggan.',
+        'Keranjang belanja dan proses checkout dengan dua metode pengiriman.',
+        'Panel admin untuk mengelola produk, kategori, pesanan, pengguna, dan laporan penjualan.',
+        'Laporan penjualan dengan filter periode dan export CSV serta PDF.',
+        'Profil pengguna dengan upload foto dan pengaturan identitas.',
+      ],
+      technologies: [
+        { name: 'React', desc: 'Framework utama untuk antarmuka customer dan admin.' },
+        { name: 'Tailwind CSS', desc: 'Styling modern dan responsif dengan utility class.' },
+        { name: 'Supabase', desc: 'Database PostgreSQL, autentikasi, dan penyimpanan file.' },
+        { name: 'Vite', desc: 'Build tool yang cepat untuk pengembangan.' },
+        { name: 'Framer Motion', desc: 'Animasi interaktif pada transisi halaman dan modal.' },
+      ],
+      role: 'Desainer dan pengembang tunggal.',
+      duration: '2025',
+      images: [],
+    },
   },
   {
     id: 3,
+    slug: 'website-rumah-sehat',
     title: 'Website Rumah Sehat',
     description: 'Website informasi layanan kesehatan Rumah Sehat. Dibuat saat magang di RSU Aisyiyah Ponorogo.',
     tech: ['HTML', 'CSS', 'JavaScript'],
@@ -33,9 +76,29 @@ export const projects = [
     icon: 'FaHospital',
     buttonText: 'Detail Project',
     category: 'Website',
+    detail: {
+      background: 'Rumah Sehat adalah program layanan kesehatan dari RSU Aisyiyah Ponorogo. Selama menjalani magang, saya diberikan tugas untuk membuat website informasi yang memudahkan masyarakat mengakses layanan yang tersedia tanpa harus datang langsung ke rumah sakit.',
+      features: [
+        'Halaman beranda yang menampilkan ringkasan layanan Rumah Sehat.',
+        'Daftar layanan kesehatan yang bisa diakses masyarakat, lengkap dengan penjelasan.',
+        'Formulir pendaftaran sederhana untuk pengunjung yang ingin memanfaatkan layanan.',
+        'Informasi jadwal operasional dan kontak yang bisa dihubungi.',
+        'Desain responsif sehingga nyaman diakses dari ponsel.',
+        'Tampilan sederhana dan ramah pengguna, cocok untuk semua kalangan.',
+      ],
+      technologies: [
+        { name: 'HTML', desc: 'Struktur halaman dan konten dasar website.' },
+        { name: 'CSS', desc: 'Styling tampilan agar rapi dan menarik.' },
+        { name: 'JavaScript', desc: 'Interaksi dasar dan validasi formulir.' },
+      ],
+      role: 'Pengembang web magang di RSU Aisyiyah Ponorogo.',
+      duration: '2025',
+      images: [],
+    },
   },
   {
     id: 4,
+    slug: 'website-form-e-ktp',
     title: 'Website Form E-KTP',
     description: 'Website untuk pengisian formulir E-KTP secara digital. Dibuat untuk mempermudah proses pendataan penduduk.',
     tech: ['HTML', 'CSS', 'JavaScript'],
@@ -44,5 +107,26 @@ export const projects = [
     icon: 'FaIdCard',
     buttonText: 'Detail Project',
     category: 'Website',
+    detail: {
+      background: 'Proses pendaftaran E-KTP secara manual sering membuat warga harus mengantre lama. Melalui program magang di RSU Aisyiyah Ponorogo, saya membuat website formulir digital untuk mempermudah proses pendataan dan mengurangi waktu tunggu di loket.',
+      features: [
+        'Formulir digital untuk pengisian data penduduk yang dibutuhkan untuk E-KTP.',
+        'Validasi input supaya data yang dimasukkan sesuai format yang benar.',
+        'Tampilan sederhana dan ramah pengguna, cocok untuk semua kalangan.',
+        'Ringkasan data sebelum dikirim, agar pengguna bisa memeriksa kembali.',
+      ],
+      technologies: [
+        { name: 'HTML', desc: 'Struktur formulir dan halaman informasi.' },
+        { name: 'CSS', desc: 'Styling tampilan formulir agar mudah dipahami.' },
+        { name: 'JavaScript', desc: 'Validasi input dan pengolahan data di sisi klien.' },
+      ],
+      role: 'Pengembang web magang di RSU Aisyiyah Ponorogo.',
+      duration: '2025',
+      images: [],
+    },
   },
 ];
+
+export const getProjectBySlug = (slug) => {
+  return projects.find((p) => p.slug === slug);
+};

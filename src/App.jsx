@@ -21,6 +21,7 @@ import Contact from './components/sections/Contact';
 
 // Pages
 import ArticleDetailPage from './pages/ArticleDetailPage';
+import ProjectDetailPage from './pages/ProjectDetailPage';
 
 import './index.css';
 
@@ -75,6 +76,7 @@ function App() {
 
           {/* Halaman Detail Artikel */}
           <Route path="/artikel/:slug" element={<ArticleDetailPage />} />
+          <Route path="/proyek/:slug" element={<ProjectDetailPage />} />
         </Routes>
         <Footer />
         <Toaster position="top-center" />
