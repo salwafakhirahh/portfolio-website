@@ -7,6 +7,20 @@ import {
 
 const TOKO_URL = import.meta.env.VITE_TOKO_URL || 'http://localhost:5174';
 
+const navItems = [
+  { name: 'Beranda', href: '#home' },
+  { name: 'Tentang', href: '#about' },
+  { name: 'Profil', href: '#professional' },
+  { name: 'Pendidikan', href: '#education' },
+  { name: 'Pengalaman', href: '#experience' },
+  { name: 'Keahlian', href: '#skills' },
+  { name: 'Karya', href: '#projects' },
+  { name: 'Sertifikat', href: '#certificates' },
+  { name: 'Kegiatan', href: '#activities' },
+  { name: 'Artikel', href: '#articles' },
+  { name: 'Kontak', href: '#contact' },
+];
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -16,10 +30,9 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
-      // Deteksi section aktif saat scroll
       const sections = navItems.map(item => item.href.replace('#', ''));
       let current = 'home';
-      
+
       sections.forEach(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -36,44 +49,22 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { name: 'Beranda', href: '#home' },
-    { name: 'Tentang', href: '#about' },
-    { name: 'Profil', href: '#professional' },
-    { name: 'Pendidikan', href: '#education' },
-    { name: 'Pengalaman', href: '#experience' },
-    { name: 'Keahlian', href: '#skills' },
-    { name: 'Karya', href: '#projects' },
-    { name: 'Sertifikat', href: '#certificates' },
-    { name: 'Kegiatan', href: '#activities' },
-    { name: 'Artikel', href: '#articles' },
-    { name: 'Kontak', href: '#contact' },
-  ];
-
-  // Fungsi scroll ke section dengan animasi
   const handleNavClick = (e, href) => {
     e.preventDefault();
     const targetId = href.replace('#', '');
     const element = document.getElementById(targetId);
-    
+
     if (element) {
-      // Scroll smooth ke section
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      
-      // Update URL hash tanpa reload
       window.history.pushState(null, '', href);
-      
-      // Trigger ulang animasi Framer Motion
-      // dengan force re-render
       setTimeout(() => {
         window.dispatchEvent(new Event('scroll'));
       }, 500);
     } else {
-      // Kalau target tidak ada, scroll ke atas (beranda)
       window.scrollTo({ top: 0, behavior: 'smooth' });
       window.history.pushState(null, '', '#home');
     }
-    
+
     setIsOpen(false);
   };
 
@@ -114,7 +105,6 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
 
-          {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -132,7 +122,6 @@ const Navbar = () => {
             </a>
           </motion.div>
 
-          {/* Menu Desktop */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -154,7 +143,6 @@ const Navbar = () => {
                   }`}
                 >
                   {item.name}
-                  {/* Underline animasi saat hover atau aktif */}
                   <motion.span
                     className="absolute bottom-0 left-0 right-0 h-0.5 bg-dustyRose rounded-full"
                     initial={{ scaleX: isActive ? 1 : 0 }}
@@ -168,7 +156,6 @@ const Navbar = () => {
             })}
           </motion.div>
 
-          {/* Tombol Aksi Desktop */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -211,7 +198,6 @@ const Navbar = () => {
             </motion.div>
           </motion.div>
 
-          {/* Tombol Mobile Menu */}
           <motion.button
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -249,7 +235,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Menu Mobile */}
       <AnimatePresence>
         {isOpen && (
           <motion.div

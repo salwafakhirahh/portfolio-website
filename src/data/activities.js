@@ -14,7 +14,7 @@ export const activities = [
     title: 'Seminar RPL Connect',
     category: 'Seminar',
     description: 'Mengikuti Seminar RPL Connect untuk memperdalam wawasan industri digital.',
-    image: 'https://picsum.photos/400/300?random=12',
+    image: 'images/rpl connect.jpeg',
     icon: 'FaChalkboardTeacher',
   },
   {
