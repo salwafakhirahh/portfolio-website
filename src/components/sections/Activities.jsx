@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   FaBookOpen, FaLaptopCode, FaChalkboardTeacher,
-  FaCode, FaIndustry, FaTrophy
+  FaCode, FaIndustry, FaTrophy, FaFire
 } from 'react-icons/fa';
 import { activities } from '../../data/activities';
 
@@ -13,6 +13,7 @@ const iconMap = {
   FaCode,
   FaIndustry,
   FaTrophy,
+  FaFire,
 };
 
 const Activities = () => {
@@ -26,6 +27,7 @@ const Activities = () => {
     { key: 'Proyek', label: 'Proyek' },
     { key: 'Kunjungan', label: 'Kunjungan' },
     { key: 'Lomba', label: 'Lomba' },
+    { key: 'Pelatihan', label: 'Pelatihan' },     // ← tambah
   ];
 
   const filtered = filter === 'all'
