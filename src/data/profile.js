@@ -14,7 +14,7 @@ export const profile = {
   socials: {
     instagram: 'https://instagram.com/slwafsy_',
     github: 'https://github.com/salwafakhirahh',
-    linkedin: '',
+    linkedin: 'https://www.linkedin.com/in/salwa-fakhirah-harsya-56aa1141a',
   },
 };
 

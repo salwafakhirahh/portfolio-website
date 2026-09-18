@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import {
   FiMail, FiPhone, FiMapPin, FiSend, FiCheckCircle
 } from 'react-icons/fi';
-import { FaInstagram } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin } from 'react-icons/fa';
 import toast from 'react-hot-toast';
 
 const Contact = () => {
@@ -134,6 +134,21 @@ const Contact = () => {
                   <div>
                     <p className="text-sm text-gray-600">Instagram</p>
                     <p className="font-semibold text-gray-800">@slwafsy_</p>
+                  </div>
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/salwa-fakhirah-harsya-56aa1141a"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-4 p-2 -m-2 rounded-xl hover:bg-white/30 transition-colors"
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-dustyRose/30 to-coral/30 rounded-full flex items-center justify-center flex-shrink-0">
+                    <FaLinkedin className="w-6 h-6 text-dustyRose" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">LinkedIn</p>
+                    <p className="font-semibold text-gray-800">Salwa Fakhirah Harsya</p>
                   </div>
                 </a>
 
