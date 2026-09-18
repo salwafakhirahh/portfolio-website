@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiMail, FiPhone, FiMapPin, FiSend, FiCheckCircle } from 'react-icons/fi';
+import {
+  FiMail, FiPhone, FiMapPin, FiSend, FiCheckCircle
+} from 'react-icons/fi';
+import { FaInstagram } from 'react-icons/fa';
 import toast from 'react-hot-toast';
 
 const Contact = () => {
@@ -91,26 +94,51 @@ const Contact = () => {
             <div className="glass rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-gray-800 mb-6">Hubungi Saya</h3>
               <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-dustyRose/20 rounded-full flex items-center justify-center">
+                <a
+                  href="mailto:salwafakhirah@email.com"
+                  className="flex items-center gap-4 p-2 -m-2 rounded-xl hover:bg-white/30 transition-colors"
+                >
+                  <div className="w-12 h-12 bg-dustyRose/20 rounded-full flex items-center justify-center flex-shrink-0">
                     <FiMail className="w-6 h-6 text-dustyRose" />
                   </div>
                   <div>
                     <p className="text-sm text-gray-600">Email</p>
                     <p className="font-semibold text-gray-800">salwafakhirah@email.com</p>
                   </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-dustyRose/20 rounded-full flex items-center justify-center">
+                </a>
+
+                <a
+                  href="https://wa.me/6282245638337"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-4 p-2 -m-2 rounded-xl hover:bg-white/30 transition-colors"
+                >
+                  <div className="w-12 h-12 bg-dustyRose/20 rounded-full flex items-center justify-center flex-shrink-0">
                     <FiPhone className="w-6 h-6 text-dustyRose" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600">Phone</p>
+                    <p className="text-sm text-gray-600">Phone / WhatsApp</p>
                     <p className="font-semibold text-gray-800">+62 822 4563 8337</p>
                   </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-dustyRose/20 rounded-full flex items-center justify-center">
+                </a>
+
+                <a
+                  href="https://instagram.com/USERNAME_IG_ANDA"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-4 p-2 -m-2 rounded-xl hover:bg-white/30 transition-colors"
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-dustyRose/30 to-coral/30 rounded-full flex items-center justify-center flex-shrink-0">
+                    <FaInstagram className="w-6 h-6 text-dustyRose" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">Instagram</p>
+                    <p className="font-semibold text-gray-800">@USERNAME_IG_ANDA</p>
+                  </div>
+                </a>
+
+                <div className="flex items-center gap-4 p-2 -m-2">
+                  <div className="w-12 h-12 bg-dustyRose/20 rounded-full flex items-center justify-center flex-shrink-0">
                     <FiMapPin className="w-6 h-6 text-dustyRose" />
                   </div>
                   <div>
@@ -134,7 +162,7 @@ const Contact = () => {
                 <input
                   type="text"
                   value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full px-4 py-2 bg-white/30 rounded-lg border border-white/40 focus:outline-none focus:ring-2 focus:ring-dustyRose"
                   placeholder="Masukkan nama Anda"
                 />
@@ -144,7 +172,7 @@ const Contact = () => {
                 <input
                   type="email"
                   value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full px-4 py-2 bg-white/30 rounded-lg border border-white/40 focus:outline-none focus:ring-2 focus:ring-dustyRose"
                   placeholder="Masukkan email Anda"
                 />
@@ -153,7 +181,7 @@ const Contact = () => {
                 <label className="block text-gray-700 font-medium mb-2">Pesan</label>
                 <textarea
                   value={formData.message}
-                  onChange={(e) => setFormData({...formData, message: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full px-4 py-2 bg-white/30 rounded-lg border border-white/40 focus:outline-none focus:ring-2 focus:ring-dustyRose h-32 resize-none"
                   placeholder="Tulis pesan Anda"
                 />
