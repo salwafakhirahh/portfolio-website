@@ -137,7 +137,6 @@ const Contact = () => {
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
                   className="w-full px-4 py-2 bg-white/30 rounded-lg border border-white/40 focus:outline-none focus:ring-2 focus:ring-dustyRose"
                   placeholder="Masukkan nama Anda"
-                  required
                 />
               </div>
               <div>
@@ -148,7 +147,6 @@ const Contact = () => {
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
                   className="w-full px-4 py-2 bg-white/30 rounded-lg border border-white/40 focus:outline-none focus:ring-2 focus:ring-dustyRose"
                   placeholder="Masukkan email Anda"
-                  required
                 />
               </div>
               <div>
@@ -158,7 +156,6 @@ const Contact = () => {
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
                   className="w-full px-4 py-2 bg-white/30 rounded-lg border border-white/40 focus:outline-none focus:ring-2 focus:ring-dustyRose h-32 resize-none"
                   placeholder="Tulis pesan Anda"
-                  required
                 />
               </div>
               <button
