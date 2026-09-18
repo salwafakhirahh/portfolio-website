@@ -95,7 +95,7 @@ const Contact = () => {
               <h3 className="text-2xl font-bold text-gray-800 mb-6">Hubungi Saya</h3>
               <div className="space-y-4">
                 <a
-                  href="mailto:salwafakhirah@email.com"
+                  href="mailto:salwafakhirahh@gmail.com"
                   className="flex items-center gap-4 p-2 -m-2 rounded-xl hover:bg-white/30 transition-colors"
                 >
                   <div className="w-12 h-12 bg-dustyRose/20 rounded-full flex items-center justify-center flex-shrink-0">
@@ -103,7 +103,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600">Email</p>
-                    <p className="font-semibold text-gray-800">salwafakhirah@email.com</p>
+                    <p className="font-semibold text-gray-800">salwafakhirahh@gmail.com</p>
                   </div>
                 </a>
 
